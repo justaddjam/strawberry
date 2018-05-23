@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/justaddjam/strawberry/issues"
   },
-  "homepage": "https://github.com/justaddjam/strawberry#readme"
+  "homepage": "https://github.com/justaddjam/strawberry#readme",
+  "dependencies": {
+    "react": "^16.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.3.14",
+    "typescript": "^2.8.3"
+  }
 }
