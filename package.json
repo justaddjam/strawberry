@@ -1,0 +1,19 @@
+{
+  "name": "@justaddjam/strawberry",
+  "version": "0.1.0",
+  "description": "A sweet set of react UI components",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justaddjam/strawberry.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justaddjam/strawberry/issues"
+  },
+  "homepage": "https://github.com/justaddjam/strawberry#readme"
+}
