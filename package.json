@@ -19,10 +19,14 @@
   },
   "homepage": "https://github.com/justaddjam/strawberry#readme",
   "dependencies": {
-    "react": "^16.3.2"
+    "react": "^16.3.2",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "@types/react-router-dom": "^4.2.6",
     "typescript": "^2.8.3"
   }
 }
