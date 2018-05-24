@@ -1,0 +1,12 @@
+# src
+src
+
+# npm
+node_modules
+.npmignore
+
+# git
+.gitignore
+
+# typescript
+tsconfig.json
