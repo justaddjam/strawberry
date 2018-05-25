@@ -1,6 +1,6 @@
 {
   "name": "@justaddjam/strawberry",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A sweet set of react UI components",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

@@ -1,6 +1,7 @@
 import { ButtonComponent } from "./button-component";
 import { CheckboxComponent } from "./check-box-component";
 import { CollapsibleSectionComponent } from "./collapsible-section-component";
+import { ContentContainerComponent }from "./content-container-component";
 import { DisableOfflineComponent } from "./disable-offline-component";
 import { DropdownComponent } from "./dropdown-component";
 import { FlexContainer } from "./flex-container-component";
@@ -30,6 +31,8 @@ export {
     ButtonComponent,
     CheckboxComponent,
     CollapsibleSectionComponent,
+    ContentContainerComponent,
+    DisableOfflineComponent,
     DropdownComponent,
     FlexContainer,
     FlexFillRemainderComponent,
