@@ -26,7 +26,7 @@ function getFormState(state: any, formId: string) {
 export function formReducer(state: any = {}, { type, payload }: any) {
     switch (type) {
         case FORM_CREATE: {
-            return { ...state, [payload.formId]: { data: payload.data || {}, errors: {}, validators: {} }}
+            return { ...state, [payload.formId]: { data: payload.data || {}, errors: {} }}
         }
         case FORM_INPUT_REGISTER_VALIDATORS: {    
             const { inputName, formId, validators } = payload;
@@ -77,7 +77,7 @@ export function formReducer(state: any = {}, { type, payload }: any) {
 
 export const FormContext = formContext.Consumer;
 
-export class FormComponent extends React.Component<any, any> {
+class FormComponent extends React.Component<any, any> {
 
     public constructor(props: any) {
         super(props);
@@ -121,4 +121,6 @@ export class FormComponent extends React.Component<any, any> {
                     </form>
                 </formContext.Provider>;
     }
-}
+} 
+
+export default connect<any, any, any>((state: any) => state)(FormComponent);
