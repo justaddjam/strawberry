@@ -94,11 +94,12 @@ class FormComponent extends React.Component<any, any> {
     private _onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        let validators: { [id: string]: Array<any> } = this.props.model.validators;
+        const form = this.props.forms[this.props.id];
+        const validators: { [id: string]: Array<any> } = form.validators;
 
         const errorCount = Object.keys(validators)
                 .map(key => {
-                    return validators[key].filter(x => x.isValid(this.props.model.data[key])).map(x => x.message);
+                    return validators[key].filter(x => x.isValid(form.data[key])).map(x => x.message);
                 })
                 .reduce((v, c) => {
                     return [ ...c, ...v ];
@@ -109,7 +110,7 @@ class FormComponent extends React.Component<any, any> {
             return notify("There are some errors");
         }
 
-        this.props.onSubmit(this.props.model);
+        this.props.onSubmit(form.data);
     }
 
     public render() {
@@ -123,4 +124,4 @@ class FormComponent extends React.Component<any, any> {
     }
 } 
 
-export default connect<any, any, any>((state: any) => state)(FormComponent);
+export default connect<any, any, any>((state: any) => { return { forms: state.form }; })(FormComponent);
