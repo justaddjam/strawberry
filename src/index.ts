@@ -7,9 +7,9 @@ import { DropdownComponent } from "./dropdown-component";
 import { FlexContainer } from "./flex-container-component";
 import { FlexFillRemainderComponent } from "./flex-fill-remainder-component";
 import { FooterComponent } from "./footer-component";
-import { FormComponent } from "./form-component";
+import { FormComponent, formReducer } from "./form-component";
+import FormInputComponent, { withForm } from "./form-input-component";
 import { GalleryComponent } from "./gallery-component";
-import { InputComponent } from "./input-component";
 import { MenuComponent } from "./menu-component";
 import { MenuItemComponent } from "./menu-item-component";
 import { MultiSelectToggleButtonGroupComponent } from "./multi-select-toggle-button-group-component";
@@ -38,8 +38,9 @@ export {
     FlexFillRemainderComponent,
     FooterComponent,
     FormComponent,
+    FormInputComponent,
+    formReducer,
     GalleryComponent,
-    InputComponent,
     MenuComponent,
     MenuItemComponent,
     MultiSelectToggleButtonGroupComponent,
@@ -56,5 +57,6 @@ export {
     TabComponent,
     TableColumnComponent,
     TableComponent,
-    ToggleButtonGroupComponent
+    ToggleButtonGroupComponent,
+    withForm
 }

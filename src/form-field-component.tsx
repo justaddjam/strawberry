@@ -8,9 +8,10 @@ export class FormFieldComponent extends React.Component<any, any> {
         return  <div className="form-field">
                     <label htmlFor={props.name}>{props.labelText}</label>
                     {props.children}
+                    {props.errors &&
                     <ul className="errors-list">
                         {props.errors.map((error: any, index: number) => <li key={index}>{error.message}</li>)}
-                    </ul>
+                    </ul>}
                 </div>;
     }
 }
