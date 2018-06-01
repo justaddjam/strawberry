@@ -1,7 +1,20 @@
 import * as React from "react";
 import { ButtonComponent } from "./button-component";
 
-export class MultiSelectToggleButtonGroupComponent extends React.Component<any, any> {
+export interface MultiSelectToggleButtonGroupProps {
+    options: Array<MultiSelectToggleButton>;
+}
+
+export interface MultiSelectToggleButtonGroupState {
+    options: Array<MultiSelectToggleButton>;
+}
+
+export interface MultiSelectToggleButton {
+    selected: boolean;
+    label: string;
+}
+
+export class MultiSelectToggleButtonGroupComponent extends React.Component<MultiSelectToggleButtonGroupProps, MultiSelectToggleButtonGroupState> {
     public constructor(props: any) {
         super(props);
 
@@ -21,7 +34,7 @@ export class MultiSelectToggleButtonGroupComponent extends React.Component<any, 
 
     public render() {
         return <div className="toggle-button-group">
-                    {this.state.options.map((option: any, index: number) => <ButtonComponent key={index} className={`toggle-button${option.selected? " on" : ""}`} onClick={() => this._handleChange(option)}>{option.label}</ButtonComponent>)}
+                    {this.state.options.map((option, index) => <ButtonComponent key={index} className={`toggle-button${option.selected? " on" : ""}`} onClick={() => this._handleChange(option)}>{option.label}</ButtonComponent>)}
                </div>;
     }
 }

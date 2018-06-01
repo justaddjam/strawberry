@@ -7,8 +7,8 @@ import { DropdownComponent } from "./dropdown-component";
 import { FlexContainer } from "./flex-container-component";
 import { FlexFillRemainderComponent } from "./flex-fill-remainder-component";
 import { FooterComponent } from "./footer-component";
-import FormComponent, { formReducer } from "./form-component";
-import FormInputComponent, { withForm, FORM_INPUT_VALUE_CHANGE } from "./form-input-component";
+import FormComponent from "./form-component";
+import FormInputComponent, { withForm } from "./form-input-component";
 import { GalleryComponent } from "./gallery-component";
 import { MenuComponent } from "./menu-component";
 import { MenuItemComponent } from "./menu-item-component";
@@ -37,10 +37,8 @@ export {
     FlexContainer,
     FlexFillRemainderComponent,
     FooterComponent,
-    FORM_INPUT_VALUE_CHANGE,
     FormComponent,
     FormInputComponent,
-    formReducer,
     GalleryComponent,
     MenuComponent,
     MenuItemComponent,

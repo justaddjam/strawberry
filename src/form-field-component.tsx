@@ -1,12 +1,20 @@
 import * as React from "react";
+import { InputError } from "./form-component";
 
-export class FormFieldComponent extends React.Component<any, any> {
+export interface FormFieldProps {
+    labelText: string;
+    required: boolean;
+    name: string;
+    errors: Array<InputError>
+}
+
+export class FormFieldComponent extends React.PureComponent<FormFieldProps> {
 
     public render() {
         const { props } = this;
 
         return  <div className="form-field">
-                    <label htmlFor={props.name}>{props.labelText}</label>
+                    <label htmlFor={props.name}>{props.labelText}{props.required && <abbr title="required">*</abbr>}</label>
                     {props.children}
                     {props.errors &&
                     <ul className="errors-list">

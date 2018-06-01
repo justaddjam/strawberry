@@ -1,7 +1,16 @@
 import * as React from "react";
 
-export class DropdownComponent extends React.Component<any, any> {
-    public constructor(props: any) {
+export interface DropdownProps {
+    placeholder: string;
+}
+
+export interface DropdownState {
+    selectedItem: React.Component;
+    showList: boolean;
+}
+
+export class DropdownComponent extends React.Component<DropdownProps, DropdownState> {
+    public constructor(props: DropdownProps) {
         super(props);
 
         this.state = {
@@ -10,7 +19,7 @@ export class DropdownComponent extends React.Component<any, any> {
         };
     }
 
-    private _selectItem(item: React.ReactChild) {
+    private _selectItem(item: React.Component) {
         this.setState({ 
             selectedItem: item,
             showList: false

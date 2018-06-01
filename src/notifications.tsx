@@ -45,10 +45,3 @@ export function notify(message: string) {
         });
     }, 5000);
 }
-
-/*
-async function setup() {
-    return new Promise((resolve, reject) => {
-        render(<AppComponent />, document.getElementById("notification-container"), resolve);
-    });
-}*/

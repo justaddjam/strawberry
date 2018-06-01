@@ -1,18 +1,19 @@
 import * as React from "react";
 import { FormFieldComponent } from "./form-field-component";
-import { connect } from "react-redux";
-import { FormContext } from "./form-component";
+import { FormContext, FormInfo } from "./form-component";
 
-export const FORM_INPUT_VALUE_CHANGE = "FORM_INPUT_VALUE_CHANGE";
-export const FORM_INPUT_VALUE_INVALID = "FORM_INPUT_VALUE_INVALID";
-export const FORM_INPUT_VALUE_VALID = "FORM_INPUT_VALUE_VALID";
-export const FORM_INPUT_BLUR = "FORM_INPUT_BLUR";
-export const FORM_INPUT_REGISTER_VALIDATORS = "FORM_INPUT_REGISTER_VALIDATORS";
+export interface FormInputProps<T> { 
+    name: string;
+    label: string;
+    required?: boolean;
+    form: FormInfo<T>;
+    type?: string;
+    disabled?: boolean;
+    value: any;
+};
 
-export interface FormInputComponentProps { 
-    name: string,
-    label: string,
-    required?: boolean
+export interface FormInputState {
+    value: any;
 };
 
 export function withForm(Component: any) {
@@ -20,20 +21,14 @@ export function withForm(Component: any) {
         return (
             <FormContext>
             {formContext => {
-                const form = props.forms[formContext.formId];
-                form.id = formContext.formId;
-
-                const allProps = { ... props };
-                delete allProps.forms;
-
-                return <Component {...allProps} form={form} />}
+                return <Component {...props} form={formContext} />}
             }
             </FormContext>
           );
     }
 }
 
-class FormInputComponent extends React.Component<any, any> {
+class FormInputComponent<T> extends React.Component<FormInputProps<T>, FormInputState> {
 
     public constructor(props: any, context: any) {
         super(props);
@@ -58,43 +53,32 @@ class FormInputComponent extends React.Component<any, any> {
             });
         }
 
-        props.dispatch({ 
-            type: FORM_INPUT_REGISTER_VALIDATORS,
-            payload: {
-                formId: props.form.id,
-                inputName: props.name,
-                validators
-            }
+        props.form.registerValidators({
+            inputName: props.name,
+            validators
         });
     }
 
     private _handleChange(event: React.ChangeEvent<HTMLInputElement>, formId: string) {
-        const { name, dispatch } = this.props;
+        const { name, form } = this.props;
 
         this.setState({
             value: event.target.value
         });
 
-        dispatch({ 
-            type: FORM_INPUT_VALUE_CHANGE,
-            payload: {
-                formId,
-                inputName: name,
-                newValue: event.target.value
-            }
+        form.inputValueChange({
+            formId,
+            inputName: name,
+            newValue: event.target.value
         });
     }
 
     private _handleBlur(event: React.FocusEvent<HTMLInputElement>, formId: string) {
-        const { name, dispatch } = this.props;
+        const { name, form } = this.props;
 
-        dispatch({ 
-            type: FORM_INPUT_BLUR,
-            payload: { 
-                formId,
-                inputName: name,
-                newValue: event.target.value
-            }
+        form.inputBlur({
+            formId,
+            inputName: name
         });
     }
 
@@ -104,11 +88,11 @@ class FormInputComponent extends React.Component<any, any> {
         const name = props.name;
         const form = props.form;
 
-        return form && <FormFieldComponent labelText={props.label} name={name} errors={form.errors[name]}>
+        return form && <FormFieldComponent labelText={props.label} name={name} errors={form.errors[name]} required={props.required} >
                         <input type={props.type || "text"}
                             disabled={props.disabled}
                             name={name}
-                            id={props.form.id + "-" + name}
+                            id={name}
                             onChange={(event) => this._handleChange(event, props.form.id)}
                             onBlur={(event) => this._handleBlur(event, props.form.id)}
                             value={this.state.value} />
@@ -116,10 +100,4 @@ class FormInputComponent extends React.Component<any, any> {
     }
 }
 
-// TODO: NOT HAPPY WITH THIS as is essentially
-// just grabbing the form property of state regardless
-// of what set to in the store - we need to check if
-// we can do something smarter
-export default connect<any, any, FormInputComponentProps>((state: any) => {
-    return { forms: state.form };
-})(withForm(FormInputComponent));
+export default withForm(FormInputComponent);

@@ -1,6 +1,10 @@
 import * as React from "react";
 
-export class CollapsibleSectionComponent extends React.Component<any, any> {
+export interface CollapsibleSectionState {
+    open: boolean;
+}
+
+export class CollapsibleSectionComponent extends React.Component<{}, CollapsibleSectionState> {
     public constructor(props: any) {
         super(props);
 

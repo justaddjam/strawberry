@@ -2,7 +2,11 @@ import * as React from "react";
 import { MenuItemComponent } from "./menu-item-component";
 import { ContentContainerComponent } from "./content-container-component";
 
-export class MenuComponent extends React.Component<any, any> {
+export interface MenuProps {
+    title: string;
+}
+
+export class MenuComponent extends React.PureComponent<MenuProps> {
     public render() {
         return  <nav>
                     <ContentContainerComponent>

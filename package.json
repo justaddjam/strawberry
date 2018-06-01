@@ -1,11 +1,12 @@
 {
   "name": "@justaddjam/strawberry",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "A sweet set of react UI components",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc",
+    "dev": "webpack-dev-server --config styleguide/webpack.config.js --hot --devtool source-map",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,9 +33,21 @@
     "@types/react-redux": "^6.0.0",
     "@types/react-router-dom": "^4.2.6",
     "@types/redux": "^3.6.0",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.0.0",
+    "redux": "^4.0.0",
+    "react-redux": "^5.0.7",
     "rimraf": "^2.6.2",
-    "typescript": "^2.8.3"
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

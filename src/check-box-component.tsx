@@ -2,13 +2,21 @@ import * as React from "react";
 import { FlexContainer } from "./flex-container-component";
 import { FlexFillRemainderComponent } from "./flex-fill-remainder-component";
 
-export class CheckboxComponent extends React.Component<any, any> {
-    public constructor(props: any) {
+export interface CheckboxState {
+    checked: boolean;
+}
+
+export interface CheckboxProps {
+    checked: boolean;
+}
+
+export class CheckboxComponent extends React.Component<CheckboxProps, CheckboxState> {
+    public constructor(props: CheckboxProps) {
         super(props);
 
         this.state = {
             checked: props.checked || false
-        }
+        };
     }
 
     public render() {

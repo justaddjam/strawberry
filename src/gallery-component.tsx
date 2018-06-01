@@ -1,7 +1,15 @@
 import * as React from "react";
 import { ContentContainerComponent } from "./content-container-component";
 
-export class GalleryComponent extends React.Component<any, any> {
+export interface GalleryProps {
+    imageUrls: Array<string>;
+}
+
+export interface GalleryState {
+    focussedImageUrl: string;
+}
+
+export class GalleryComponent extends React.Component<GalleryProps, GalleryState> {
 
     public constructor(props: any) {
         super(props);

@@ -1,8 +1,12 @@
 import * as React from "react";
 import { PopupComponent } from "./popup-component";
 
-export class DisableOfflineComponent extends React.Component<any, any> {
-    public constructor(props: any) {
+export interface DisableOfflineState {
+    online: boolean;
+}
+
+export class DisableOfflineComponent extends React.Component<{}, DisableOfflineState> {
+    public constructor(props: {}) {
         super(props);
 
         this.state = {
