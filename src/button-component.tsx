@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export interface ButtonProps {
+    id?: string;
     type?: string;
     disabled?: boolean;
     className?: string;
