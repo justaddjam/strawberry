@@ -17,6 +17,7 @@ function validateForm<T>(inputValue: any, inputName: string, form: FormInfo<T>) 
 
 export interface FormProps<T> {
     id: string;
+    initialData?: T;
     onSubmit(data: T): any;
 }
 
@@ -47,13 +48,13 @@ export const FormContext = formContext.Consumer;
 
 export default class FormComponent<T extends { [property: string]: any }> extends React.Component<FormProps<T>, FormState<T>> {
 
-    public constructor(props: any) {
+    public constructor(props: FormProps<T>) {
         super(props);
 
         this.state = {
             form: {
                 id: props.id,
-                data: {} as T,
+                data: props.initialData || {} as T,
                 errors: {},
                 validators: {},
                 inputBlur: (payload: any) => {
