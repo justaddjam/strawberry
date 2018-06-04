@@ -21,6 +21,7 @@ import { RadioButtonGroupComponent } from "./radio-button-group-component";
 import { RangeComponent } from "./range-component";
 import { SearchComponent } from "./search-component";
 import { SliderComponent } from "./slider-component";
+import { showConfirmDialog } from "./show-confirm-dialog";
 import { SwitchComponent } from "./switch-component";
 import { TabComponent } from "./tab-component";
 import { TableColumnComponent } from "./table-column-component";
@@ -52,6 +53,7 @@ export {
     RangeComponent,
     SearchComponent,
     SliderComponent,
+    showConfirmDialog,
     SwitchComponent,
     TabComponent,
     TableColumnComponent,
