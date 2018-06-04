@@ -8,6 +8,7 @@ export interface ConfirmDialogProps {
     onResult?: (a: any) => any;
 }
 
+const DialogBackdropComponent = createWrapperComponent({ className: "dialog-backdrop" });
 const DialogComponent = createWrapperComponent({ className: "dialog" });
 const DialogBodyComponent = createWrapperComponent({ className: "dialog-body" });
 const DialogActionBarComponent = createWrapperComponent({ className: "dialog-action-bar" });
@@ -24,15 +25,17 @@ export class ConfirmDialogComponent extends React.PureComponent<ConfirmDialogPro
 
     public render() {
         return (
-            <DialogComponent>
-                <DialogBodyComponent>
-                    {this.props.prompt}
-                </DialogBodyComponent>
-                <DialogActionBarComponent>
-                    <ButtonComponent onClick={() => this.props.onResult({ confirmed: true })}>Confirm</ButtonComponent>
-                    <ButtonComponent onClick={() => this.props.onResult({ confirmed: false })}>Cancel</ButtonComponent>
-                </DialogActionBarComponent>
-            </DialogComponent>
+            <DialogBackdropComponent>
+                <DialogComponent>
+                    <DialogBodyComponent>
+                        {this.props.prompt}
+                    </DialogBodyComponent>
+                    <DialogActionBarComponent>
+                        <ButtonComponent onClick={() => this.props.onResult({ confirmed: true })}>Confirm</ButtonComponent>
+                        <ButtonComponent onClick={() => this.props.onResult({ confirmed: false })}>Cancel</ButtonComponent>
+                    </DialogActionBarComponent>
+                </DialogComponent>
+            </DialogBackdropComponent>
         );
     }
 }
