@@ -1,0 +1,23 @@
+@import "../variables";
+
+.tab-list {
+    display: flex;
+    .tab-list-item {
+        
+        background: $primary-color;
+        padding: $padding-medium;
+        color: white;
+        font-weight: 700;
+        flex: 1;
+        text-align: center;
+        cursor: pointer;
+
+        &.selected {
+            background: darken($primary-color, 20%);
+        }
+        
+        &:hover {
+            background: darken($primary-color, 10%);
+        }
+    }
+}

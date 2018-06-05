@@ -1,0 +1,10 @@
+@import "../variables";
+
+.toggle-button {
+    border-radius: 0;
+    border: darken($primary-color, 20%) solid 1px;
+
+    &.on {
+        background: darken($primary-color, 20%);
+    }
+}

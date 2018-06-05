@@ -1,0 +1,15 @@
+@import "../variables";
+
+.content-container {
+    max-width: $desktop-min-width;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+
+    .flex-fill-remainder {
+        flex: 1;
+    }
+}

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { FlexContainer } from "./flex-container-component";
-import { FlexFillRemainderComponent } from "./flex-fill-remainder-component";
+import { FlexContainer } from "../containers/flex-container-component";
+import { FlexFillRemainderComponent } from "../containers/flex-fill-remainder-component";
 
 export class RadioButtonComponent extends React.Component<any, any> {
 

@@ -1,0 +1,35 @@
+@import "../variables";
+
+.radio-button {
+    cursor: pointer;
+    margin: 0.5rem 0;
+
+    input {
+        display: none;
+    }
+
+    .radio-button-outer {
+        border: 0.1rem solid #ccc;
+        border-radius: 50%;
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+        margin-right: 0.5rem;
+    }
+
+    .radio-button-inner {
+        background: $primary-color;
+        position: absolute;
+        left: 0.15rem;
+        top: 0.15rem;
+        border-radius: 50%;
+        width: 0.7rem;
+        height: 0.7rem;
+        transform: scale(0);
+        transition: transform 0.2s ease;
+    }
+
+    .checked .radio-button-inner {
+        transform: scale(1);
+    }
+}

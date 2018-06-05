@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { ContentContainerComponent } from "./content-container-component";
+import { ContentContainerComponent } from "../containers/content-container-component";
 
 export class NotificationContainer extends React.Component<any, any> {
     public constructor(props: any) {

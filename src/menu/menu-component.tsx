@@ -1,6 +1,6 @@
 import * as React from "react";
 import { MenuItemComponent } from "./menu-item-component";
-import { ContentContainerComponent } from "./content-container-component";
+import { ContentContainerComponent } from "../containers/content-container-component";
 
 export interface MenuProps {
     title: string;

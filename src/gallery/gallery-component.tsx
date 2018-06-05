@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ContentContainerComponent } from "./content-container-component";
+import { ContentContainerComponent } from "../containers/content-container-component";
 
 export interface GalleryProps {
     imageUrls: Array<string>;

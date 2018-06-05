@@ -1,0 +1,33 @@
+@import "../variables";
+
+nav {
+    background: $primary-color;
+    color: white;
+    font-weight: 700;
+
+    .title {
+        padding: $padding-medium;
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.menu-item-list {
+    display: inline-flex;
+    justify-content: flex-end;
+    right: 0;
+}
+
+.menu-item {
+    display: inline-block;
+    padding: $padding-medium;
+    color: white;
+    font-weight: 700;
+
+    &:hover {
+        background: darken($primary-color, 10%);
+    }
+}

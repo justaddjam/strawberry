@@ -1,3 +1,5 @@
+require("!style-loader!css-loader!sass-loader!../../src/index.scss");
+
 import { ButtonComponent, FormComponent, FormInputComponent, notify, showConfirmDialog } from "../../src";
 import * as React from "react";
 

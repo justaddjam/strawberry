@@ -1,0 +1,21 @@
+@import "../variables";
+
+table {
+    border-collapse: collapse;
+
+    td, th {
+        padding: $padding-medium;
+    }
+
+    th {
+        background: $primary-color;
+        color: white;
+        cursor: pointer;
+    }
+
+    tbody {
+        tr:nth-child(even) {
+            background: #eee;
+        }
+    }
+}

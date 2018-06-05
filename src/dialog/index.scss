@@ -1,0 +1,27 @@
+@import "../variables";
+
+.dialog-backdrop {
+    position: fixed;
+    background-color: rgba(0,0,0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.dialog {
+    padding: 2em 1em;
+    border-radius: 0.25em;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.dialog-action-bar button {
+    margin: 0.5em;
+}
+
+.dialog-action-bar {
+    text-align: center;
+}

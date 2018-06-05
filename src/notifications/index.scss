@@ -1,0 +1,14 @@
+@import "../variables";
+
+.notification-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+    .notification {
+        background: black;
+        color: white;
+        margin: 1rem;
+        padding: 1rem;
+    }
+}

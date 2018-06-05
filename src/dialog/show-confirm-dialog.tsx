@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import * as React from "react";
-import { createWrapperComponent } from "./create-wrapper-component";
-import { ButtonComponent } from "./button-component";
+import { createWrapperComponent } from "../utility/create-wrapper-component";
+import { ButtonComponent } from "../button/button-component";
 
 export interface ConfirmDialogProps {
     prompt: React.ReactNode;

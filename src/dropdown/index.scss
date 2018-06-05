@@ -1,0 +1,37 @@
+@import "../variables";
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+
+    .selected-item {
+        border: 2px solid #ccc;
+        border-radius: 2px;
+        min-height: 1rem;
+        position: relative;
+        padding: $padding-medium;
+
+        &:after {            
+            border-top: #666 solid 0.5rem;
+            border-left: transparent solid 0.5rem;
+            border-right: transparent solid 0.5rem;
+            position: absolute;
+            top: 1rem;
+            right: $padding-medium;
+            content: "";
+        }
+    }
+
+    .dropdown-list {
+        width: 100%;
+        position: absolute;
+        background: white;
+
+        .dropdown-list-item {            
+            padding: $padding-medium;
+            &:hover {
+                background: #eee;
+            }
+        }        
+    }
+}

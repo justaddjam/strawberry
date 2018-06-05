@@ -1,0 +1,53 @@
+@import "../variables";
+
+.checkbox {
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        overflow: visible;
+        padding: 2px;
+
+        &.checked {
+            path {
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+
+    path, rect {
+        fill: none;
+    }
+
+    path {
+        stroke-width: 4px;
+        stroke: $primary-color;
+        stroke-dashoffset: 26px;
+        stroke-dasharray: 26px;
+        transition: stroke-dashoffset 0.4s ease;
+    }
+
+    rect {
+        stroke-width: 2px;
+        stroke: #666;
+    }
+
+    &:focus {
+        rect {
+            stroke: $primary-color;
+        }
+
+        outline: none;
+    }
+
+    &[disabled] {
+        rect, path {
+            stroke: #ccc;
+        }
+    }
+}

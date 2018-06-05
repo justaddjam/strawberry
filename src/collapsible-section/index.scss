@@ -1,0 +1,14 @@
+@import "../variables";
+
+.collapsible-section-container {
+    border: #ccc solid 1px;
+
+    .collapsible-section-header {
+        background: #eee;
+        cursor: pointer;
+    }
+
+    .collapsible-section-header, .collapsible-section-body {
+        overflow: auto;
+    }
+}

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect, Provider } from "react-redux";
-import { ContentContainerComponent } from "./content-container-component";
-import { notify } from "./notifications";
+import { ContentContainerComponent } from "../containers/content-container-component";
+import { notify } from "../notifications/notifications";
 
 const formContext = React.createContext<FormInfo<any>>(null);
 

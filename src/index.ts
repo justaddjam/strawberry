@@ -1,63 +1,29 @@
-import { ButtonComponent } from "./button-component";
-import { CheckboxComponent } from "./check-box-component";
-import { CollapsibleSectionComponent } from "./collapsible-section-component";
-import { ContentContainerComponent }from "./content-container-component";
-import { DisableOfflineComponent } from "./disable-offline-component";
-import { DropdownComponent } from "./dropdown-component";
-import { FlexContainer } from "./flex-container-component";
-import { FlexFillRemainderComponent } from "./flex-fill-remainder-component";
-import { FooterComponent } from "./footer-component";
-import FormComponent from "./form-component";
-import FormInputComponent, { withForm } from "./form-input-component";
-import { GalleryComponent } from "./gallery-component";
-import { MenuComponent } from "./menu-component";
-import { MenuItemComponent } from "./menu-item-component";
-import { MultiSelectToggleButtonGroupComponent } from "./multi-select-toggle-button-group-component";
-import { notify, NotificationContainer } from "./notifications";
-import { PopupComponent } from "./popup-component";
-import { ProgressBarComponent } from "./progress-bar-component";
-import { RadioButtonComponent } from "./radio-button-component";
-import { RadioButtonGroupComponent } from "./radio-button-group-component";
-import { RangeComponent } from "./range-component";
-import { SearchComponent } from "./search-component";
-import { SliderComponent } from "./slider-component";
-import { showConfirmDialog } from "./show-confirm-dialog";
-import { SwitchComponent } from "./switch-component";
-import { TabComponent } from "./tab-component";
-import { TableColumnComponent } from "./table-column-component";
-import { TableComponent } from "./table-component";
-import { ToggleButtonGroupComponent } from "./toggle-button-group-component";
-
-export {
-    ButtonComponent,
-    CheckboxComponent,
-    CollapsibleSectionComponent,
-    ContentContainerComponent,
-    DisableOfflineComponent,
-    DropdownComponent,
-    FlexContainer,
-    FlexFillRemainderComponent,
-    FooterComponent,
-    FormComponent,
-    FormInputComponent,
-    GalleryComponent,
-    MenuComponent,
-    MenuItemComponent,
-    MultiSelectToggleButtonGroupComponent,
-    NotificationContainer,
-    notify,
-    PopupComponent,
-    ProgressBarComponent,
-    RadioButtonComponent,
-    RadioButtonGroupComponent,
-    RangeComponent,
-    SearchComponent,
-    SliderComponent,
-    showConfirmDialog,
-    SwitchComponent,
-    TabComponent,
-    TableColumnComponent,
-    TableComponent,
-    ToggleButtonGroupComponent,
-    withForm
-}
+export { ButtonComponent } from "./button/button-component";
+export { CheckboxComponent } from "./checkbox/check-box-component";
+export { CollapsibleSectionComponent } from "./collapsible-section/collapsible-section-component";
+export { ContentContainerComponent }from "./containers/content-container-component";
+export { DisableOfflineComponent } from "./offline/disable-offline-component";
+export { DropdownComponent } from "./dropdown/dropdown-component";
+export { FlexContainer } from "./containers/flex-container-component";
+export { FlexFillRemainderComponent } from "./containers/flex-fill-remainder-component";
+export { FooterComponent } from "./footer/footer-component";
+export { default as FormComponent } from "./form/form-component";
+export { default as FormInputComponent, withForm } from "./form/form-input-component";
+export { GalleryComponent } from "./gallery/gallery-component";
+export { MenuComponent } from "./menu/menu-component";
+export { MenuItemComponent } from "./menu/menu-item-component";
+export { MultiSelectToggleButtonGroupComponent } from "./multi-select/multi-select-toggle-button-group-component";
+export { notify, NotificationContainer } from "./notifications/notifications";
+export { PopupComponent } from "./popup/popup-component";
+export { ProgressBarComponent } from "./progress/progress-bar-component";
+export { RadioButtonComponent } from "./radio-button/radio-button-component";
+export { RadioButtonGroupComponent } from "./radio-button/radio-button-group-component";
+export { RangeComponent } from "./slider/range-component";
+export { SearchComponent } from "./search/search-component";
+export { SliderComponent } from "./slider/slider-component";
+export { showConfirmDialog } from "./dialog/show-confirm-dialog";
+export { SwitchComponent } from "./switch/switch-component";
+export { TabComponent } from "./tab/tab-component";
+export { TableColumnComponent } from "./table/table-column-component";
+export { TableComponent } from "./table/table-component";
+export { ToggleButtonGroupComponent } from "./toggle-button/toggle-button-group-component";

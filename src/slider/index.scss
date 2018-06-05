@@ -1,0 +1,30 @@
+@import "../variables";
+
+.slider {
+    position: relative;
+    padding: 0.5rem 1rem;
+
+    .slider-scale {
+        height: 0.25rem;
+        border-radius: 0.125rem;
+        background: #666;
+    }
+
+    .slider-indicator {
+        height: 0.25rem;
+        border-radius: 0.125rem;
+        background: $primary-color;
+        position: absolute;
+        top: 0.5rem;
+    }
+
+    .slider-knob {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: solid #ccc 0.125rem;
+        position: absolute;
+        top: 0;
+        background: white;
+    }
+}

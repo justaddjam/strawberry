@@ -1,0 +1,29 @@
+@import "../variables";
+
+input {
+    border-radius: 2px;
+    border: #ccc solid 1px;
+    padding: 0.25rem;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-field {
+    overflow: auto;
+
+    label {
+        display: block;
+        margin: 0.5rem 0;
+        overflow: auto;
+    }
+
+    .errors-list {
+        margin: 0.5rem 0;
+        overflow: auto;
+        list-style-type: none;
+        padding: 0;
+        color: red;
+    }
+}

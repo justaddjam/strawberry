@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PopupComponent } from "./popup-component";
+import { PopupComponent } from "../popup/popup-component";
 
 export interface DisableOfflineState {
     online: boolean;

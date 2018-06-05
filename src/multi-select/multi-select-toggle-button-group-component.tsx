@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ButtonComponent } from "./button-component";
+import { ButtonComponent } from "../button/button-component";
 
 export interface MultiSelectToggleButtonGroupProps {
     options: Array<MultiSelectToggleButton>;
