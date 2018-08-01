@@ -57,6 +57,8 @@ export default class FormComponent<T extends { [property: string]: any }> extend
                 data: props.initialData || {} as T,
                 errors: {},
                 validators: {},
+
+                
                 inputBlur: (payload: any) => {
                     const { inputName, formId } = payload;
 
